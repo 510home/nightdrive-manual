@@ -6,6 +6,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // create a scene
 const scene = new THREE.Scene();
+ //scene.background = new THREE.Color(0x0a0c0f);
+  scene.fog = new THREE.Fog(0x232a3b, 12, 22);
 
  // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
@@ -52,14 +54,14 @@ meshLoader.load(
   (gltf) => {
     const wheelsback = gltf.scene;
     wheelsback.scale.set(.97, .97, .97);
-    wheelsback.position.set(-0.72, 0.25, -0.525);
+    wheelsback.position.set(-0.72, 0.2, -0.525);
     scene.add(wheelsback);
   }
 );
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ─────────────────────────────────
 
-    const texPLane = new THREE.PlaneGeometry(16, 4);
+    const texPLane = new THREE.PlaneGeometry(24, 4);
     const texLoader = new THREE.TextureLoader();
     const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg', (tex01) => {  
       tex01.wrapS = tex01.wrapT = THREE.RepeatWrapping;
@@ -91,10 +93,12 @@ meshLoader.load(
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
+    const hemiLight = new THREE.HemisphereLight(0x4815e3, 0x0a0a0f, 0.2);
+    scene.add(hemiLight);
 
 // add light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
- scene.add(ambientLight);
+//const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
+ //scene.add(ambientLight);
 
   /* ── spotlights ── */
   function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
