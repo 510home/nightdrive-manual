@@ -25,7 +25,7 @@ const meshLoader = new GLTFLoader();
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
-  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_A.glb',
+  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_B.glb',
   (gltf) => {
     const lancer = gltf.scene;
     lancer.scale.set(1.35, 1.35, 1.35);
@@ -43,6 +43,17 @@ meshLoader.load(
     scene.add(wheelsfront);
   }
 );
+
+meshLoader.load(
+  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
+  (gltf) => {
+    const wheelsback = gltf.scene;
+    wheelsback.scale.set(1, 1, 1);
+    wheelsback.position.set(-0.72, 0.2, -0.525);
+    scene.add(wheelsback);
+  }
+);
+
 
 
 // add renderer to the Document Object Model (DOM)
