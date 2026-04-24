@@ -12,7 +12,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(3, 2, 4);
     camera.lookAt(0, 0.5, 0);
-    
+
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
@@ -57,13 +57,43 @@ meshLoader.load(
   }
 );
 
+// ── Ground Plane 02 (16 m wide × 4 m long) ─────────────────────────────────
+
+    const texPLane = new THREE.PlaneGeometry(16, 4);
+    const texLoader = new THREE.TextureLoader();
+    const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg', (tex01) => {  
+      tex01.wrapS = tex01.wrapT = THREE.RepeatWrapping;
+     tex01.repeat.set(2, 1);
+    });  
+
+    
+    const streetMat = new THREE.MeshStandardMaterial ({
+      metalness: 0.2,
+      roughness: 0.5,
+      map: streetmap,
+      side: THREE.DoubleSide,
+    });
+    
+    const plane02tex = new THREE.Mesh(texPLane, streetMat);
+    
+    plane02tex.rotation.x = -Math.PI / 2;
+    plane02tex.receiveShadow = true;
+    plane02tex.position.set(0, 0, -1);
+    scene.add(plane02tex);
+    
+    // subtle grid lines on the ground ───────────────────────────────
+    const gridHelper = new THREE.GridHelper(16, 32, 0x2a2a3a, 0x2a2a3a);
+    gridHelper.position.y = 0.001;
+    scene.add(gridHelper);
+
+
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 
 // add light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, .12);
+const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
  scene.add(ambientLight);
 
  const topLight = new THREE.DirectionalLight(0xffffff, 5);
