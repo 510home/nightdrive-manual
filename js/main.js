@@ -10,6 +10,9 @@ const scene = new THREE.Scene();
  // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(3, 2, 4);
+    camera.lookAt(0, 0.5, 0);
+    
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
@@ -48,20 +51,16 @@ meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
     const wheelsback = gltf.scene;
-    wheelsback.scale.set(1, 1, 1);
-    wheelsback.position.set(-0.72, 0.2, -0.525);
+    wheelsback.scale.set(.97, .97, .97);
+    wheelsback.position.set(-0.72, 0.25, -0.525);
     scene.add(wheelsback);
   }
 );
-
-
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
-// camera position
-//camera.position.set(0, 1, 2);
 
 // add light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .12);
