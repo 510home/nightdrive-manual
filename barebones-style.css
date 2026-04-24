@@ -1,0 +1,37 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f1a13;
+    background-image: linear-gradient(24deg, hsl(242, 100%, 13%), #330564, #85007a);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+header {
+    margin-top: 3em;
+    text-align: center; 
+    color: rgb(255, 191, 0)
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+header h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+#container3D canvas {
+    margin: 0 auto;
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
