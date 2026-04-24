@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #0f1a13;
-    background-image: linear-gradient(24deg,  #85007a, #330564, hsl(242, 100%, 13%));
+    background-image: linear-gradient(8deg,  #85007a, #330564, hsl(242, 100%, 13%), #06003d);
     background-repeat: no-repeat;
     background-attachment: fixed;
 
