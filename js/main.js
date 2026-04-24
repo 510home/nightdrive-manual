@@ -50,7 +50,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 0, 2);
+camera.position.set(0, 1, 2);
 
 // add light to the scene
 const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
@@ -62,7 +62,7 @@ const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
 
  function animate() {
   requestAnimationFrame(animate);
-  if (wheelsfront) wheelsfront.rotation.z = t * Math.PI * 2 * 9;
+  //wheelsfront.rotation.z = t * Math.PI * 2 * 9;
  
 renderer.render(scene, camera);
  }
