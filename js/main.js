@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // create a scene
 const scene = new THREE.Scene();
- //scene.background = new THREE.Color(0x0a0c0f);
+ scene.background = new THREE.Color(0x0a0c0f);
   scene.fog = new THREE.Fog(0x232a3b, 3, 15);
 
  // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
@@ -34,7 +34,7 @@ meshLoader.load(
   (gltf) => {
     const lancer = gltf.scene;
     lancer.scale.set(.99, .99, .99);
-    lancer.position.set(-0.07, 0.2, -0.55);
+    lancer.position.set(-0.07, 0.06, -0.55);
     scene.add(lancer);
   },
 );
