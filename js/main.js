@@ -28,7 +28,7 @@ meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_B.glb',
   (gltf) => {
     const lancer = gltf.scene;
-    lancer.scale.set(1.35, 1.35, 1.35);
+    lancer.scale.set(1, 1, 1);
     lancer.position.set(-0.07, 0, -0.55);
     scene.add(lancer);
   },
@@ -61,14 +61,14 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
 // camera position
-camera.position.set(0, 1, 2);
+//camera.position.set(0, 1, 2);
 
 // add light to the scene
-const ambientLight = new THREE.AmbientLight(0xdf8842, .5);
+const ambientLight = new THREE.AmbientLight(0xdf8842, .12);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0xffffff, 3.5);
- topLight.position.set(0, 1, 0);
+ const topLight = new THREE.DirectionalLight(0xffffff, 5);
+ topLight.position.set(.5, 1, 0);
  scene.add(topLight);
 
  function animate() {
