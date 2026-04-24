@@ -33,7 +33,7 @@ meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_B.glb',
   (gltf) => {
     const lancer = gltf.scene;
-    lancer.scale.set(.9, .9, .9);
+    lancer.scale.set(.93, .93, .93);
     lancer.position.set(-0.07, 0, -0.55);
     scene.add(lancer);
   },
@@ -93,7 +93,7 @@ meshLoader.load(
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
-    const hemiLight = new THREE.HemisphereLight(0x4815e3, 0x0a0a0f, 0.2);
+    const hemiLight = new THREE.HemisphereLight(0x4815e3, 0x0a0a0f, 0.02);
     scene.add(hemiLight);
 
 // add light to the scene
@@ -118,7 +118,7 @@ document.getElementById('container3D').appendChild(renderer.domElement);
     return s;
   }
 
-  const spot1 = makeSpot(0xfff4d0, .5,  1, 5,  3, 0, 0, 0);
+  const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
   spot1.castShadow = false;
   makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
