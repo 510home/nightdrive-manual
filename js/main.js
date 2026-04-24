@@ -10,7 +10,7 @@ const scene = new THREE.Scene();
  // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(3, 2, 4);
+    camera.position.set(2, 1, 3);
     camera.lookAt(0, 0.5, 0);
 
 // create a renderer
@@ -96,9 +96,27 @@ document.getElementById('container3D').appendChild(renderer.domElement);
 const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
  scene.add(ambientLight);
 
- const topLight = new THREE.DirectionalLight(0xffffff, 5);
- topLight.position.set(.5, 1, 0);
- scene.add(topLight);
+  /* ── spotlights ── */
+  function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
+    const s = new THREE.SpotLight(color, intensity);
+    s.position.set(x, y, z);
+    s.angle = Math.PI / 7;
+    s.penumbra = 0.35;
+    s.decay = 1.8;
+    s.distance = 12;
+    s.castShadow = true;
+    s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
+    s.shadow.camera.near = 0.5;
+    s.shadow.camera.far  = 14;
+    s.target.position.set(tx, ty, tz);
+    scene.add(s);
+    scene.add(s.target);
+    return s;
+  }
+
+  const spot1 = makeSpot(0xfff4d0, .5,  1, 5,  3, 0, 0, 0);
+  spot1.castShadow = false;
+  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
  function animate() {
   requestAnimationFrame(animate);
