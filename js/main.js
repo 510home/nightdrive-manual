@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // create a scene
 const scene = new THREE.Scene();
- scene.background = new THREE.Color(0x0a0c0f);
+ scene.background = new THREE.Color(0x000000);
   scene.fog = new THREE.Fog(0x000000, 2, 8);
 
  // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
