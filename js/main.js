@@ -127,7 +127,7 @@ window.addEventListener('resize', function () {
 
 function animate() {
   requestAnimationFrame(animate);
-  lancer.rotation.x += 0.01;
+  wheelsFront.rotation.z += 0.01;
 //if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
 // if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
