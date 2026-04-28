@@ -126,7 +126,7 @@ window.addEventListener('resize', function () {
 
 function animate() {
   requestAnimationFrame(animate);
- const t = clock.getElapsedTime();
+// const t = clock.getElapsedTime();
 //  if (wheelsFront) 
 //  {
 //   wheelsFront.rotation.z += 0.01;
@@ -134,7 +134,7 @@ function animate() {
 //if (wheelsFront) {wheelsFront.rotation.z = t * Math.PI * 2 * 9;
  if (wheelsBack) 
  {
-  wheelsBack.rotation.z  = t * Math.PI * 2 * 9
+  wheelsBack.rotation.z += 0.01;
  }; 
 renderer.render(scene, camera);
  }
