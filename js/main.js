@@ -4,14 +4,14 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-// create a scene
+// create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
- scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.Fog(0x000000, 2, 8);
+ scene.background = new THREE.Color(0x440022);
+  scene.fog = new THREE.Fog(0x000000, 5, 16);
 
- // scene.fog = new THREE.Fog(0x1c5d50, 12, 22);
+
 //create a camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(2, 1, 3);
     camera.lookAt(0, 0.5, 0);
 
@@ -25,7 +25,7 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 controls.minDistance = .35;
 controls.maxDistance = 200;
-
+// instantiate GLTFLoader for models
 const meshLoader = new GLTFLoader();
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
