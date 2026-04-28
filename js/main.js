@@ -124,18 +124,18 @@ document.getElementById('container3D').appendChild(renderer.domElement);
 
  function animate() {
   requestAnimationFrame(animate);
-  wheelsFront.rotation.z += 0.05;
+  wheelsFront.rotation.z += 0.01;
 //if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
 // if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
  }
-
+/*
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-
+*/
 // start rendering the scene
 animate ();
