@@ -9,7 +9,6 @@ const scene = new THREE.Scene();
  scene.background = new THREE.Color(0x440022);
   scene.fog = new THREE.Fog(0x000000, 5, 16);
 
-
 //create a camera
 const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(2, 1, 3);
@@ -36,7 +35,7 @@ meshLoader.load(
     lancer.scale.set(.99, .99, .99);
     lancer.position.set(-0.07, 0.06, -0.55);
     scene.add(lancer);
-  },
+  }
 );
 
 meshLoader.load(
@@ -127,7 +126,9 @@ window.addEventListener('resize', function () {
 
 function animate() {
   requestAnimationFrame(animate);
-  wheelsFront.rotation.z += 0.01;
+  if (wheelsFront) {
+   wheelsFront.rotation.z += 0.01;
+  }
 //if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
 // if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
