@@ -42,20 +42,20 @@ meshLoader.load(
 meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
-    const wheelsfront = gltf.scene;
-    wheelsfront.scale.set(1, 1, 1);
-    wheelsfront.position.set(0.985, 0.2, -0.525);
-    scene.add(wheelsfront);
+    const wheelsFront = gltf.scene;
+    wheelsFront.scale.set(1, 1, 1);
+    wheelsFront.position.set(0.985, 0.2, -0.525);
+    scene.add(wheelsFront);
   }
 );
 
 meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
-    const wheelsback = gltf.scene;
-    wheelsback.scale.set(.97, .97, .97);
-    wheelsback.position.set(-0.72, 0.2, -0.525);
-    scene.add(wheelsback);
+    const wheelsBack = gltf.scene;
+    wheelsBack.scale.set(.97, .97, .97);
+    wheelsBack.position.set(-0.72, 0.2, -0.525);
+    scene.add(wheelsBack);
   }
 );
 
@@ -125,7 +125,8 @@ document.getElementById('container3D').appendChild(renderer.domElement);
  function animate() {
   requestAnimationFrame(animate);
   //wheelsfront.rotation.z = t * Math.PI * 2 * 9;
- 
+      if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
+      if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
  }
 
