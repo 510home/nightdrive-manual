@@ -24,7 +24,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 controls.minDistance = .35;
-controls.maxDistance = 200;
+controls.maxDistance = 20;
 // instantiate GLTFLoader for models
 const meshLoader = new GLTFLoader();
 
@@ -88,13 +88,9 @@ meshLoader.load(
     gridHelper.position.y = 0.001;
   //  scene.add(gridHelper);
 
-
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
-
- //   const hemiLight = new THREE.HemisphereLight(0x4815e3, 0x0a0a0f, 0.02);
-  //  scene.add(hemiLight);
 
 // add light to the scene
 //const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
@@ -131,7 +127,7 @@ window.addEventListener('resize', function () {
 
 function animate() {
   requestAnimationFrame(animate);
-  wheelsFront.rotation.x += 0.01;
+  lancer.rotation.x += 0.01;
 //if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
 // if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
