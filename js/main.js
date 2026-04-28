@@ -124,9 +124,9 @@ document.getElementById('container3D').appendChild(renderer.domElement);
 
  function animate() {
   requestAnimationFrame(animate);
-  //wheelsfront.rotation.z = t * Math.PI * 2 * 9;
-      if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
-      if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
+  wheelsFront.rotation.z = t * Math.PI * 2 * 9;
+//if (wheelsFront) wheelsFront.rotation.z = t * Math.PI * 2 * 9;
+// if (wheelsBack)  wheelsBack.rotation.z  = t * Math.PI * 2 * 9; 
 renderer.render(scene, camera);
  }
 
