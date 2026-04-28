@@ -126,6 +126,7 @@ window.addEventListener('resize', function () {
 
 function animate() {
   requestAnimationFrame(animate);
+ const t = clock.getElapsedTime();
 //  if (wheelsFront) 
 //  {
 //   wheelsFront.rotation.z += 0.01;
