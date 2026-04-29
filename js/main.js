@@ -136,7 +136,7 @@ function animate() {
 //  };
 //if (wheelsFront) {wheelsFront.rotation.z = t * Math.PI * 2 * 9;
 // wheelsBack.rotation.z += 0.02;
- controls.update();
+// controls.update();
 renderer.render(scene, camera);
  }
 
