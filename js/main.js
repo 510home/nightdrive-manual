@@ -139,7 +139,7 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
-plane02tex.material.map.offset.y = 0.04 * deltaTime;
+plane02tex.material.map.offset.y = deltaTime * -0.0075;
 // controls.update();
 renderer.render(scene, camera);
  }
