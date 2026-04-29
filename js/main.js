@@ -11,7 +11,7 @@ scene.fog = new THREE.Fog(0x000000, 2, 10);
 
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(2, 1, 3);
+    camera.position.set(1.25, 1, 2);
     camera.lookAt(0, 0.5, 0);
 
 // create a renderer
@@ -97,7 +97,7 @@ meshLoader.load(
     // subtle grid lines on the ground ───────────────────────────────
     const gridHelper = new THREE.GridHelper(16, 32, 0x2a2a3a, 0x2a2a3a);
     gridHelper.position.y = 0.001;
-    scene.add(gridHelper);
+//    scene.add(gridHelper);
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
