@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000022);
-scene.fog = new THREE.Fog(0x000000, 1, 24);
+scene.fog = new THREE.Fog(0x000000, 1, 12);
 
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
