@@ -38,11 +38,11 @@ meshLoader.load(
     scene.add(lancer);
   }
 );
-//const wheelsFront;
+let wheelsFront;
 meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
-    const wheelsFront = gltf.scene;
+    wheelsFront = gltf.scene;
     wheelsFront.scale.set(1, 1, 1);
     wheelsFront.position.set(0.985, 0.2, -0.525);
     scene.add(wheelsFront);
@@ -126,6 +126,7 @@ window.addEventListener('resize', function () {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
  let time = Date.now()
 function animate() {
   requestAnimationFrame(animate);
