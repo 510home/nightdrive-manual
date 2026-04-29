@@ -89,7 +89,7 @@ meshLoader.load(
     
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
-    plane02tex.position.set(0, 0, 0.65);
+    plane02tex.position.set(0, 0, 0.45);
     scene.add(plane02tex);
     return plane02tex;
       }
