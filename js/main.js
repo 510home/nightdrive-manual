@@ -18,7 +18,7 @@ const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // mesh variable for street
-const mesh = addObjects(scene);
+const mesh = addRoad(scene);
 
 // instantiate OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -66,7 +66,7 @@ meshLoader.load(
 );
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
-
+      function addRoad(scene) {
     const texPLane = new THREE.PlaneGeometry(96, 4);
     const texLoader = new THREE.TextureLoader();
     const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg', (tex01) => {  
@@ -89,6 +89,7 @@ meshLoader.load(
     plane02tex.position.set(0, 0, 0.65);
 
     scene.add(plane02tex);
+      }
     
     // subtle grid lines on the ground ───────────────────────────────
     const gridHelper = new THREE.GridHelper(16, 32, 0x2a2a3a, 0x2a2a3a);
