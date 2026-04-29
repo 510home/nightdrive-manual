@@ -17,6 +17,9 @@ const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerH
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
+// mesh variable for street
+const mesh = addObjects(scene);
+
 // instantiate OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -84,12 +87,13 @@ meshLoader.load(
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
     plane02tex.position.set(0, 0, 0.65);
+
     scene.add(plane02tex);
     
     // subtle grid lines on the ground ───────────────────────────────
     const gridHelper = new THREE.GridHelper(16, 32, 0x2a2a3a, 0x2a2a3a);
     gridHelper.position.y = 0.001;
-  //  scene.add(gridHelper);
+    scene.add(gridHelper);
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -134,8 +138,9 @@ function animate() {
 const currentTime = Date.now()
 const deltaTime = currentTime - time
 time = currentTime
-wheelsBack.rotation.z -= 0.08 * deltaTime;
-wheelsFront.rotation.z -= 0.08 * deltaTime;
+wheelsBack.rotation.z -= 0.04 * deltaTime;
+wheelsFront.rotation.z -= 0.04 * deltaTime;
+ mesh.material.map.offset.y = 0.04 * deltaTime;
 // controls.update();
 renderer.render(scene, camera);
  }
