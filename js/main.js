@@ -134,10 +134,6 @@ function animate() {
 //   wheelsFront.rotation.z += 0.01;
 //  };
 //if (wheelsFront) {wheelsFront.rotation.z = t * Math.PI * 2 * 9;
- if (wheelsBack) 
- {
-  wheelsBack.rotation.z += 0.01;
- }; 
 renderer.render(scene, camera);
  }
 
