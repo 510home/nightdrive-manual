@@ -12,7 +12,7 @@ scene.fog = new THREE.Fog(0x000000, 1, 8);
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 500);
     camera.position.set(2, 2, 2);
-    camera.lookAt(35, 2, -1);
+    camera.lookAt(65, 25, -1);
 
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
@@ -69,6 +69,7 @@ meshLoader.load(
 );
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
+// this long narrow plane holds the animated asphalt street texture
     function addRoad(scene) {
     const texPLane = new THREE.PlaneGeometry(96, 4);
     const texLoader = new THREE.TextureLoader();
@@ -86,26 +87,21 @@ meshLoader.load(
     });
     
     const plane02tex = new THREE.Mesh(texPLane, streetMat);
-    
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
-    plane02tex.position.set(0, 0, 0.15);
+    plane02tex.position.set(0, 0, 0.25);
     scene.add(plane02tex);
     return plane02tex;
       }
     
-    // subtle grid lines on the ground ───────────────────────────────
-    const gridHelper = new THREE.GridHelper(16, 32, 0x2a2a3a, 0x2a2a3a);
+// subtle grid lines on the ground ───────────────────────────────
+    const gridHelper = new THREE.GridHelper(16, 32, 0x4815e3, 0x204693);
     gridHelper.position.y = 0.001;
-//    scene.add(gridHelper);
+    scene.add(gridHelper);
 
 // add renderer to the Document Object Model (DOM)
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById('container3D').appendChild(renderer.domElement);
-
-// add light to the scene
-//const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
- //scene.add(ambientLight);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('container3D').appendChild(renderer.domElement);
 
   /* ── spotlights ── */
   function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
