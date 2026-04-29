@@ -66,7 +66,7 @@ meshLoader.load(
 );
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
-      function addRoad(scene) {
+    function addRoad(scene) {
     const texPLane = new THREE.PlaneGeometry(96, 4);
     const texLoader = new THREE.TextureLoader();
     const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg');  
@@ -139,7 +139,7 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
-mesh.material.map.offset.y = 0.04 * deltaTime;
+plane02tex.material.map.offset.y = 0.04 * deltaTime;
 // controls.update();
 renderer.render(scene, camera);
  }
