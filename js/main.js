@@ -137,7 +137,7 @@ time = currentTime
 //   wheelsFront.rotation.z += 0.01;
 //  };
 //if (wheelsFront) {wheelsFront.rotation.z = t * Math.PI * 2 * 9;
-wheelsBack.rotation.z += 0.02 * deltaTime;
+wheelsBack.rotation.z -= 0.02 * deltaTime;
 // controls.update();
 renderer.render(scene, camera);
  }
