@@ -34,6 +34,7 @@ meshLoader.load(
     const lancer = gltf.scene;
     lancer.scale.set(.99, .99, .99);
     lancer.position.set(-0.07, 0.06, -0.55);
+    lancer.rotation.set(0, 0, 0);
     scene.add(lancer);
   }
 );
@@ -135,6 +136,7 @@ function animate() {
 //  };
 //if (wheelsFront) {wheelsFront.rotation.z = t * Math.PI * 2 * 9;
  wheelsBack.rotation.z += 0.02;
+ controls.update();
 renderer.render(scene, camera);
  }
 
