@@ -10,7 +10,7 @@ scene.background = new THREE.Color(0x000022);
 scene.fog = new THREE.Fog(0x000000, 1, 8);
 
 //create a camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 500);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
     camera.position.set(2, 2, 2);
     camera.lookAt(-65, 2, -1);
 
@@ -32,6 +32,13 @@ controls.minDistance = .35;
 controls.maxDistance = 20;
 // instantiate GLTFLoader for models
 const meshLoader = new GLTFLoader();
+
+//Synthwave Moon ────────────────────── a circle for the camera to look at
+
+const circle = new THREE.CircleGeometry( 20, 10, 100 );
+const material = new THREE.MeshBasicMaterial( { color: 0xff66ff } );
+const moon = new THREE.Mesh( geometry, material );
+scene.add( moon )
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
