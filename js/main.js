@@ -145,7 +145,7 @@ time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
 chron++;
-mesh.material.map.offset.x = chron * 0.0075;
+mesh.material.map.offset.x = chron * -0.0075;
 // controls.update();
 renderer.clear();
 renderer.render(scene, camera);
