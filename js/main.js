@@ -141,7 +141,7 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
-mesh.material.map.offset.y = deltaTime * -0.04;
+mesh.material.map.offset.x = deltaTime * -0.04;
 // controls.update();
 renderer.clear();
 renderer.render(scene, camera);
