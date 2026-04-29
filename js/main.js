@@ -49,11 +49,11 @@ meshLoader.load(
   }
 );
 
-
+var wheelsBack;
 meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
-    const wheelsBack = gltf.scene;
+    wheelsBack = gltf.scene;
     wheelsBack.scale.set(.97, .97, .97);
     wheelsBack.position.set(-0.72, 0.2, -0.525);
     wheelsBack.rotation.z = 0;
