@@ -18,7 +18,7 @@ const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // mesh variable for street
-const mesh = addRoad(scene);
+let mesh = addRoad(scene);
 
 // instantiate OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -76,9 +76,10 @@ meshLoader.load(
 
     const streetMat = new THREE.MeshStandardMaterial ({
       map: streetmap,
+      transparent: false,
       metalness: 0.2,
       roughness: 0.5,     
-      side: THREE.DoubleSide,
+      side: THREE.DoubleSide
     });
     
     const plane02tex = new THREE.Mesh(texPLane, streetMat);
@@ -87,6 +88,7 @@ meshLoader.load(
     plane02tex.receiveShadow = true;
     plane02tex.position.set(0, 0, 0.65);
     scene.add(plane02tex);
+    return plane02tex;
       }
     
     // subtle grid lines on the ground ───────────────────────────────
@@ -139,8 +141,9 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
-plane02tex.material.map.offset.y = deltaTime * -0.0075;
+mesh.material.map.offset.y = deltaTime * -0.0075;
 // controls.update();
+renderer.clear();
 renderer.render(scene, camera);
  }
 
