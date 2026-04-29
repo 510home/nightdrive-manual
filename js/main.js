@@ -69,16 +69,15 @@ meshLoader.load(
       function addRoad(scene) {
     const texPLane = new THREE.PlaneGeometry(96, 4);
     const texLoader = new THREE.TextureLoader();
-    const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg', (tex01) => {  
-      tex01.wrapS = tex01.wrapT = THREE.RepeatWrapping;
-     tex01.repeat.set(2, 1);
-    });  
+    const streetmap = texLoader.load('https://raw.githubusercontent.com/510home/iso-night-drive/main/tex/asphalt01x.jpg');  
+      streetmap.wrapS = THREE.RepeatWrapping;
+      streetmap.wrapT = THREE.RepeatWrapping;
+      streetmap.repeat.set(1, 1);  
 
-    
     const streetMat = new THREE.MeshStandardMaterial ({
-      metalness: 0.2,
-      roughness: 0.5,
       map: streetmap,
+      metalness: 0.2,
+      roughness: 0.5,     
       side: THREE.DoubleSide,
     });
     
@@ -87,7 +86,6 @@ meshLoader.load(
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
     plane02tex.position.set(0, 0, 0.65);
-
     scene.add(plane02tex);
       }
     
@@ -141,7 +139,7 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
- mesh.material.map.offset.y = 0.04 * deltaTime;
+mesh.material.map.offset.y = 0.04 * deltaTime;
 // controls.update();
 renderer.render(scene, camera);
  }
