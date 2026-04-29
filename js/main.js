@@ -12,7 +12,7 @@ scene.fog = new THREE.Fog(0x000000, 1, 8);
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 500);
     camera.position.set(2, 2, 2);
-    camera.lookAt(65, 25, -1);
+    camera.lookAt(-65, 2, -1);
 
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
