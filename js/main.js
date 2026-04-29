@@ -91,7 +91,7 @@ meshLoader.load(
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
-//document.getElementById('container3D').appendChild(renderer.domElement);
+document.getElementById('container3D').appendChild(renderer.domElement);
 
 // add light to the scene
 //const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
