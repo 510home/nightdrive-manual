@@ -48,19 +48,19 @@ meshLoader.load(
   }
 );
 
-const wheelsBack;
+
 meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
   (gltf) => {
-    wheelsBack = gltf.scene;
+   const wheelsBack = gltf.scene;
     wheelsBack.scale.set(.97, .97, .97);
     wheelsBack.position.set(-0.72, 0.2, -0.525);
-   wheelsBack.rotation.set(0,0,0)
+   wheelsBack.rotation.set(0,0,1);
     scene.add(wheelsBack);
   }
 );
 
-// ── Ground Plane 02 (16 m wide × 4 m long) ─────────────────────────────────
+// ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
 
     const texPLane = new THREE.PlaneGeometry(96, 4);
     const texLoader = new THREE.TextureLoader();
