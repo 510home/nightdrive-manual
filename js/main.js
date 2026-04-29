@@ -81,7 +81,7 @@ meshLoader.load(
     
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
-    plane02tex.position.set(0, 0, -1);
+    plane02tex.position.set(0, 0, 1);
     scene.add(plane02tex);
     
     // subtle grid lines on the ground ───────────────────────────────
@@ -91,7 +91,7 @@ meshLoader.load(
 
 // add renderer to the Document Object Model (DOM)
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById('container3D').appendChild(renderer.domElement);
+//document.getElementById('container3D').appendChild(renderer.domElement);
 
 // add light to the scene
 //const ambientLight = new THREE.AmbientLight(0xdf8842, .02);
