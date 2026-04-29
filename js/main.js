@@ -36,10 +36,10 @@ controls.maxDistance = 20;
 const meshLoader = new GLTFLoader();
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 4, 36);
+const circle = new THREE.CircleGeometry( 3, 48);
 const moonmat = new THREE.MeshBasicMaterial( { color: 0xff66ff } );
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 0, -3);
+moon.position.set(0, 0, -2.25);
 scene.add( moon )
 
 
