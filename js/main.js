@@ -20,6 +20,9 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
 // mesh variable for street
 let mesh = addRoad(scene);
 
+// chron setting for street animation
+let chron = 0;
+
 // instantiate OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -141,7 +144,8 @@ const deltaTime = currentTime - time
 time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
-mesh.material.map.offset.x = deltaTime * -0.02;
+chron++;
+mesh.material.map.offset.x = chron * -0.0075;
 // controls.update();
 renderer.clear();
 renderer.render(scene, camera);
