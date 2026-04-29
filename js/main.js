@@ -12,7 +12,7 @@ scene.fog = new THREE.Fog(0x000000, 2, 10);
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(1, 1, 1);
-    camera.lookAt(0.75, 0.06, -1);
+    camera.lookAt(1.25, 0.06, -1);
 
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
@@ -89,7 +89,7 @@ meshLoader.load(
     
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
-    plane02tex.position.set(0, 0, 0.45);
+    plane02tex.position.set(0, 0, 0.15);
     scene.add(plane02tex);
     return plane02tex;
       }
