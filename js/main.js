@@ -45,6 +45,7 @@ meshLoader.load(
     wheelsFront = gltf.scene;
     wheelsFront.scale.set(1, 1, 1);
     wheelsFront.position.set(0.985, 0.2, -0.525);
+    wheelsFront.rotation.z = 0;
     scene.add(wheelsFront);
   }
 );
