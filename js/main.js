@@ -24,7 +24,7 @@ let mesh = addRoad(scene);
 let chron = 0;
 
 // instantiate OrbitControls
-const controls = new OrbitControls(camera, renderer.domElement);
+//const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
