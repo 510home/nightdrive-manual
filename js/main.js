@@ -6,11 +6,11 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
- scene.background = new THREE.Color(0x000022);
-  scene.fog = new THREE.Fog(0x000000, 5, 16);
+scene.background = new THREE.Color(0x000022);
+scene.fog = new THREE.Fog(0x000000, 2, 10);
 
 //create a camera
-const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(2, 1, 3);
     camera.lookAt(0, 0.5, 0);
 
@@ -145,7 +145,7 @@ time = currentTime
 wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
 chron++;
-mesh.material.map.offset.y = chron * 0.0075;
+mesh.material.map.offset.x = chron * 0.0075;
 // controls.update();
 renderer.clear();
 renderer.render(scene, camera);
