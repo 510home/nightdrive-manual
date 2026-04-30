@@ -36,12 +36,11 @@ controls.maxDistance = 20;
 const meshLoader = new GLTFLoader();
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 3, 48);
+const circle = new THREE.CircleGeometry( 2, 60);
 const moonmat = new THREE.MeshBasicMaterial( { color: 0xff66ff } );
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 0, -2.25);
+moon.position.set(1, 1, -6);
 scene.add( moon )
-
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
@@ -102,7 +101,6 @@ meshLoader.load(
     plane02tex.rotation.x = -Math.PI / 2;
     plane02tex.receiveShadow = true;
     plane02tex.position.set(0, 0, 0.25);
-    plane02tex.receiveShadow = true;
     scene.add(plane02tex);
     return plane02tex;
       }
