@@ -55,7 +55,10 @@ const meshLoader = new GLTFLoader();
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 2, 60);
+const moonalpha = new THREE.TextureLoader().load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-alpha.jpg');
 const moonmat = new THREE.MeshBasicMaterial( { color: 0xff66ff } );
+moonmat.alphaMap = moonalpha;
+moonmat.transparent = true;
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(1, 1, -6);
 scene.add( moon )
