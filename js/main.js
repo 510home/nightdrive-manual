@@ -54,7 +54,7 @@ controls.maxDistance = 20;
 const meshLoader = new GLTFLoader();
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 2.5, 60);
+const circle = new THREE.CircleGeometry( 2, 60);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-alpha.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
@@ -67,7 +67,7 @@ const moonmat = new THREE.MeshStandardMaterial({
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(3, 1, -8);
+moon.position.set(3, 1, -3);
 scene.add( moon )
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
