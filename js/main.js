@@ -61,7 +61,7 @@ const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const moonmat = new THREE.MeshStandardMaterial();
 moonmat.map = mooncolor;
 moonmat.alphaMap = moonalpha;
-moonmat.transparent = true;
+moonmat.transparent = false;
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(1, 1, -6);
 scene.add( moon )
