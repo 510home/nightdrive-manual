@@ -60,8 +60,9 @@ const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
 const moonmat = new THREE.MeshStandardMaterial();
 moonmat.map = mooncolor;
+moonmat.emissiveMap = mooncolor;
 moonmat.alphaMap = moonalpha;
-moonmat.transparent = false;
+moonmat.transparent = true;
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(1, 1, -6);
 scene.add( moon )
