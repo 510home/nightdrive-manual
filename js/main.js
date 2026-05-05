@@ -61,13 +61,13 @@ const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const moonmat = new THREE.MeshStandardMaterial({
   map: mooncolor,
   emissiveMap: mooncolor,
- emissive: new THREE.Color(0xffffff),
-  emissiveIntensity: 2,
- // alphaMap: moonalpha,
- // transparent: true,
+    emissive: new THREE.Color(0xffffff),
+    emissiveIntensity: 1.65,
+  alphaMap: moonalpha,
+  transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(2, 1, -6);
+moon.position.set(5, 1, -6);
 scene.add( moon )
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
