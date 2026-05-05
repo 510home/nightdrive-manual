@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     composer.addPass(renderScene);
 // BLOOM PASS SETTINGS ------ Synthwave Glow
     const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight), 5, 6, 0.5);
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 2, 6, 0.5);
    // bloomPass.threshold = 0;
   //  bloomPass.strength = 1.5;
   //  bloomPass.radius = 0;
@@ -62,7 +62,7 @@ const moonmat = new THREE.MeshStandardMaterial({
   map: mooncolor,
   emissiveMap: mooncolor,
   emissive: new THREE.Color(0xffffff),
-  emissiveIntensity: 2,
+  emissiveIntensity: 1,
   alphaMap: moonalpha,
   transparent: true,
   //metalness: 0.5,
