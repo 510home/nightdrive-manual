@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     composer.addPass(renderScene);
 // BLOOM PASS SETTINGS ------ Synthwave Glow
     const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight), 10, 6, 0.4);
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 5, 6, 0.5);
    // bloomPass.threshold = 0;
   //  bloomPass.strength = 1.5;
   //  bloomPass.radius = 0;
