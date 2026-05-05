@@ -58,11 +58,16 @@ const circle = new THREE.CircleGeometry( 2.5, 60);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-alpha.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
-const moonmat = new THREE.MeshStandardMaterial();
-moonmat.map = mooncolor;
-moonmat.emissiveMap = mooncolor;
-moonmat.alphaMap = moonalpha;
-moonmat.transparent = true;
+const moonmat = new THREE.MeshStandardMaterial({
+  map: mooncolor,
+  emissiveMap: mooncolor,
+  alphaMap: moonalpha,
+  transparent: true,
+  emissive: new THREE.Color(0xff66ff),
+  emissiveIntensity: 1.5,
+  metalness: 0.5,
+  roughness: 0.5
+});
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(1, 1, -6);
 scene.add( moon )
