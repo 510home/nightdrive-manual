@@ -3,6 +3,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 // create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
@@ -14,6 +17,16 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
     camera.position.set(1.5, 2, 2);
     camera.lookAt(0.5, 0.5, -2);
 
+    const renderScene = new RenderPass(scene, camera);
+    const composer = new EffectComposer(renderer);
+    composer.addPass(renderScene);
+
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+   // bloomPass.threshold = 0;
+  //  bloomPass.strength = 1.5;
+  //  bloomPass.radius = 0;
+    composer.addPass(bloomPass);
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
 
@@ -145,7 +158,7 @@ window.addEventListener('resize', function () {
 
  let time = Date.now()
 function animate() {
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate); 
 const currentTime = Date.now()
 const deltaTime = currentTime - time
 time = currentTime
@@ -155,7 +168,8 @@ chron++;
 mesh.material.map.offset.x = chron * -0.0075;
 // controls.update();
 //renderer.clear();
-renderer.render(scene, camera);
+//renderer.render(scene, camera);
+composer.render();
  }
 
 // start rendering the scene
