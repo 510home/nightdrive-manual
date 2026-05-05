@@ -17,6 +17,10 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
     camera.position.set(1.5, 2, 2);
     camera.lookAt(0.5, 0.5, -2);
 
+
+// create a renderer
+const renderer = new THREE.WebGLRenderer( { alpha: true });
+
     const renderScene = new RenderPass(scene, camera);
     const composer = new EffectComposer(renderer);
     composer.addPass(renderScene);
@@ -27,8 +31,6 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
   //  bloomPass.strength = 1.5;
   //  bloomPass.radius = 0;
     composer.addPass(bloomPass);
-// create a renderer
-const renderer = new THREE.WebGLRenderer( { alpha: true });
 
 // mesh variable for street
 let mesh = addRoad(scene);
