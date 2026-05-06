@@ -41,9 +41,9 @@ const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
 const moonmat = new THREE.MeshStandardMaterial({
 map: mooncolor,
-//emissiveMap: mooncolor,
-//emissive: new THREE.Color(0xffffff),
-//emissiveIntensity: 1,
+emissiveMap: mooncolor,
+emissive: new THREE.Color(0xffffff),
+emissiveIntensity: 1,
   alphaMap: moonalpha,
   transparent: true,
 });
