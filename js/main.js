@@ -10,7 +10,7 @@ import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 // create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000022);
-scene.fog = new THREE.Fog(0x000000, 1, 12);
+//scene.fog = new THREE.Fog(0x000000, 1, 12);
 
 //create a camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     composer.addPass(renderScene);
 // BLOOM PASS SETTINGS ------ Synthwave Glow
     const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight), 5, 6, 0.75);
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 2, 4, 0.75);
    //  bloomPass.threshold = 0;
    //  bloomPass.strength = 0.5;
    //  bloomPass.radius = 0;
