@@ -41,15 +41,14 @@ const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
 const moonmat = new THREE.MeshStandardMaterial({
 map: mooncolor,
-map: new THREE.Color(0xffffff),
-emissiveMap: mooncolor,
-emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 1,
+//emissiveMap: mooncolor,
+//emissive: new THREE.Color(0xffffff),
+//emissiveIntensity: 1,
   alphaMap: moonalpha,
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(1, 1, -3);
+moon.position.set(0, 1, -2);
 scene.add( moon )
 
 // mesh variable for street
