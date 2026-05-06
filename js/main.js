@@ -17,7 +17,6 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
     camera.position.set(1.5, 2, 2);
     camera.lookAt(0.5, 0.5, -2);
 
-
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -35,24 +34,6 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
    //  bloomPass.radius = 0;
     composer.addPass(bloomPass);
 
-// mesh variable for street
-let mesh = addRoad(scene);
-
-// chron setting for street animation
-let chron = 0;
-
-// instantiate OrbitControls
-/*
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.screenSpacePanning = false;
-controls.minDistance = .35;
-controls.maxDistance = 20;
-*/
-// instantiate GLTFLoader for models
-const meshLoader = new GLTFLoader();
-
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 2, 60);
 const moonmaps = new THREE.TextureLoader();
@@ -67,8 +48,27 @@ const moonmat = new THREE.MeshStandardMaterial({
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(3, 1, -3);
+moon.position.set(1, 1, -3);
 scene.add( moon )
+
+// mesh variable for street
+let mesh = addRoad(scene);
+
+// chron setting for street animation
+let chron = 0;
+
+// instantiate GLTFLoader for models
+const meshLoader = new GLTFLoader();
+
+// instantiate OrbitControls
+/*
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.minDistance = .35;
+controls.maxDistance = 20;
+*/
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
@@ -132,11 +132,6 @@ meshLoader.load(
     scene.add(plane02tex);
     return plane02tex;
       }
-    
-// subtle grid lines on the ground ───────────────────────────────
-    const gridHelper = new THREE.GridHelper(16, 32, 0x4815e3, 0x204693);
-    gridHelper.position.y = 0.001;
-//    scene.add(gridHelper);
 
 // add renderer to the Document Object Model (DOM)
  //   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -170,7 +165,6 @@ window.addEventListener('resize', function () {
   camera.updateProjectionMatrix();
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   composer.setSize(window.innerWidth, window.innerHeight);
-
 });
 
  let time = Date.now()
@@ -185,7 +179,6 @@ wheelsFront.rotation.z -= 0.04 * deltaTime;
 chron++;
 mesh.material.map.offset.x = chron * -0.0075;
 // controls.update();
-//renderer.clear();
 //renderer.render(scene, camera);
 composer.render();
  }
