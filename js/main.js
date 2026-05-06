@@ -31,7 +31,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight), 5, 6, 0.75);
    //  bloomPass.threshold = 0;
-   //  bloomPass.strength = 1.5;
+   //  bloomPass.strength = 0.5;
    //  bloomPass.radius = 0;
     composer.addPass(bloomPass);
 
