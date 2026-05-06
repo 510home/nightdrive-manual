@@ -30,7 +30,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight), 1, 4, 0.75);
    //  bloomPass.threshold = 0;
-   //  bloomPass.strength = 0.5;
+   //  bloomPass.strength = 1;
    //  bloomPass.radius = 0;
     composer.addPass(bloomPass);
 
@@ -40,10 +40,10 @@ const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-alpha.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
 const moonmat = new THREE.MeshStandardMaterial({
-//  map: mooncolor,
-  emissiveMap: mooncolor,
-    emissive: new THREE.Color(0xffffff),
-    emissiveIntensity: 0.5,
+  map: mooncolor,
+//  emissiveMap: mooncolor,
+//    emissive: new THREE.Color(0xffffff),
+//    emissiveIntensity: 0.5,
   alphaMap: moonalpha,
   transparent: true,
 });
