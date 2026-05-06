@@ -62,7 +62,7 @@ const moonmat = new THREE.MeshStandardMaterial({
 //  map: mooncolor,
   emissiveMap: mooncolor,
     emissive: new THREE.Color(0xffffff),
-    emissiveIntensity: 1,
+    emissiveIntensity: 0.5,
   alphaMap: moonalpha,
   transparent: true,
 });
