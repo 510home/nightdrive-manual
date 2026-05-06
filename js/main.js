@@ -42,7 +42,7 @@ const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/night
 const moonmat = new THREE.MeshStandardMaterial({
 map: mooncolor,
 emissiveMap: mooncolor,
-emissive: new THREE.Color(0xffffff),
+emissive: new THREE.Color(0xff66ff),
 emissiveIntensity: 1,
   alphaMap: moonalpha,
   transparent: true,
