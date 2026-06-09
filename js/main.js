@@ -37,8 +37,8 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 2, 60);
 const moonmaps = new THREE.TextureLoader();
-const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-alpha.jpg');
-const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/moon-grad-color.jpg');
+const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
+const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
 const moonmat = new THREE.MeshStandardMaterial({
 map: mooncolor,
 emissiveMap: mooncolor,
