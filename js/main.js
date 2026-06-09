@@ -44,13 +44,13 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.85,
+emissiveIntensity: 0.75,
   alphaMap: moonalpha,
   transparent: true,
 
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 2, -4);
+moon.position.set(0.5, 2, -4);
 scene.add( moon )
 
 // mesh variable for street
