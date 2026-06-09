@@ -50,9 +50,9 @@ emissiveIntensity: 0.75,
 
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0.5, .5, -4);
+moon.position.set(0, .5, -2);
 scene.add(moon);
-camera.add(moon)
+//camera.add(moon)
 
 // mesh variable for street
 let mesh = addRoad(scene);
