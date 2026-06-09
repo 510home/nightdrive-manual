@@ -35,7 +35,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     composer.addPass(bloomPass);
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 2, 60);
+const circle = new THREE.CircleGeometry( 3, 60);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
@@ -44,13 +44,13 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.5,
+emissiveIntensity: 0.85,
   alphaMap: moonalpha,
   transparent: true,
 
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 1, -2);
+moon.position.set(0, 2, -4);
 scene.add( moon )
 
 // mesh variable for street
