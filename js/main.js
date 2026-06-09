@@ -44,13 +44,13 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.75,
+emissiveIntensity: 0.55,
   alphaMap: moonalpha,
   transparent: true,
 
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 1, -1.75);
+moon.position.set(0, 3, -1.75);
 scene.add(moon);
 //camera.add(moon)
 
