@@ -51,7 +51,7 @@ emissiveIntensity: 0.65,
 });
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(0, 2.25, -1.75);
-moon.rotation.set(0,-Math.PI / 5, 0);
+moon.rotation.set(0, 0, 0);
 scene.add(moon);
 //camera.add(moon)
 
