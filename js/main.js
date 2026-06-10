@@ -12,18 +12,6 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000022);
 //scene.fog = new THREE.Fog(0x000000, 1, 12);
 
-
-//create a camera
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
-    camera.position.set(5, 0.5, 0);
- //   camera.rotation.set(
- //       THREE.MathUtils.degToRad(0),
- //       THREE.MathUtils.degToRad(60),
- //       THREE.MathUtils.degToRad(30),
- //       );
-//    camera.lookAt(0, 0.5, -4);
-
-
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -40,6 +28,16 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   bloomPass.strength = 1;
   bloomPass.radius = 0;
    composer.addPass(bloomPass);
+
+//create a camera
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
+    camera.position.set(5, 0.5, 0);
+ //   camera.rotation.set(
+ //       THREE.MathUtils.degToRad(0),
+ //       THREE.MathUtils.degToRad(60),
+ //       THREE.MathUtils.degToRad(30),
+ //       );
+
 
 // instantiate OrbitControls
 
