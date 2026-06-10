@@ -12,6 +12,23 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000022);
 //scene.fog = new THREE.Fog(0x000000, 1, 12);
 
+// create a renderer
+const renderer = new THREE.WebGLRenderer( { alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    const renderScene = new RenderPass(scene, camera);
+    const composer = new EffectComposer(renderer);
+    composer.addPass(renderScene);
+// BLOOM PASS SETTINGS ------ Synthwave Glow
+ const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
+    bloomPass.threshold = 0;
+  bloomPass.strength = 1;
+  bloomPass.radius = 0;
+   composer.addPass(bloomPass);
+
 //create a camera
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
     camera.position.set(5, 0.5, 0);
@@ -36,22 +53,6 @@ controls.target = new THREE.Vector3(0, 2, -2);
 controls.maxAzimuthAngle = [ -0.2, 0.2];
 //controls.maxPolarAngle = 1.042
 
-// create a renderer
-const renderer = new THREE.WebGLRenderer( { alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    const renderScene = new RenderPass(scene, camera);
-    const composer = new EffectComposer(renderer);
-    composer.addPass(renderScene);
-// BLOOM PASS SETTINGS ------ Synthwave Glow
- const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
-    bloomPass.threshold = 0;
-  bloomPass.strength = 1;
-  bloomPass.radius = 0;
-   composer.addPass(bloomPass);
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 5, 48);
