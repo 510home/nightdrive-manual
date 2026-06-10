@@ -158,7 +158,7 @@ meshLoader.load(
     s.position.set(x, y, z);
     s.angle = Math.PI / 7;
     s.penumbra = 0.35;
-    s.decay = 1.8;
+    s.decay = 1.2;
     s.distance = 18;
     s.castShadow = true;
     s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
