@@ -95,6 +95,15 @@ meshLoader.load(
     lancer.rotation.set(0, 0, 0);
     lancer.castShadow = true;
     lancer.receiveShadow = true;
+
+    lancer.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow    = true;
+          o.receiveShadow = true;
+          // Ensure materials are double-sided in case normals are flipped
+     //     if (o.material) o.material.side = THREE.DoubleSide;
+        }
+      });
     scene.add(lancer);
   }
 );
@@ -126,14 +135,7 @@ meshLoader.load(
   }
 );
 
- model.traverse(lancer => {
-        if (lancer.isMesh) {
-          lancer.castShadow    = true;
-          lancer.receiveShadow = true;
-          // Ensure materials are double-sided in case normals are flipped
-     //     if (o.material) o.material.side = THREE.DoubleSide;
-        }
-      });
+ 
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
 // this long narrow plane holds the animated asphalt street texture
