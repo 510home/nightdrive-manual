@@ -14,8 +14,8 @@ scene.background = new THREE.Color(0x000022);
 
 //create a camera
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 200);
-    camera.position.set(5, .5, 1.75);
-    camera.lookAt(0.5, 0.5, -1);
+    camera.position.set(5, .5, 1);
+    camera.lookAt(0.5, 0.5, -1.5);
 
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
@@ -147,21 +147,21 @@ meshLoader.load(
   function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
     const s = new THREE.SpotLight(color, intensity);
     s.position.set(x, y, z);
-    s.angle = Math.PI / 3;
+    s.angle = Math.PI / 7;
     s.penumbra = 0.35;
     s.decay = 1.8;
     s.distance = 18;
     s.castShadow = true;
     s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
     s.shadow.camera.near = 0.5;
-    s.shadow.camera.far  = 18;
+    s.shadow.camera.far  = 12;
     s.target.position.set(tx, ty, tz);
     scene.add(s);
     scene.add(s.target);
     return s;
   }
   //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-    const spot1 = makeSpot(0x8ba9f3, 6, -2, 1, 2, -.5, 0.125, 0);
+    const spot1 = makeSpot(0x8ba9f3, 6, -2, 1, 2, -.5, 1, 0.5);
 //  spot1.castShadow = true;
     const spot2 = makeSpot(0x8ba9f3, 8, -1, 2.25, -3, -.5, .125, 0);
 //spot2.castShadow = true;
