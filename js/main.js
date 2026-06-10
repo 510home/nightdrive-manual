@@ -25,10 +25,10 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     const renderScene = new RenderPass(scene, camera);
  //   const composer = new EffectComposer(renderer);
-//    composer.addPass(renderScene);
+    composer.addPass(renderScene);
 // BLOOM PASS SETTINGS ------ Synthwave Glow
    // const bloomPass = new UnrealBloomPass(
-    //  new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
+      new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
    //  bloomPass.threshold = 0;
    //  bloomPass.strength = 1;
    //  bloomPass.radius = 0;
