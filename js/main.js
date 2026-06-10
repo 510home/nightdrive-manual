@@ -56,8 +56,8 @@ controls.maxAzimuthAngle = [ -0.2, 0.2];
 //controls.maxPolarAngle = 1.042
 
 
-//Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 5, 48);
+// MOON ────────────────────── 
+const circle = new THREE.CircleGeometry( 6, 48);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
@@ -66,7 +66,7 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.5,
+emissiveIntensity: 0.25,
   alphaMap: moonalpha,
   transparent: true,
 });
