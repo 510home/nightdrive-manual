@@ -17,8 +17,8 @@ const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerH
     camera.position.set(5, 0.5, 0);
     camera.rotation.set(
         THREE.MathUtils.degToRad(0),
-        THREE.MathUtils.degToRad(20),
-        THREE.MathUtils.degToRad(0),
+        THREE.MathUtils.degToRad(60),
+        THREE.MathUtils.degToRad(30),
         );
 //    camera.lookAt(0, 0.5, -4);
 
