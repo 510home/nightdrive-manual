@@ -71,7 +71,7 @@ controls.screenSpacePanning = false;
 controls.minDistance = 1;
 controls.maxDistance = 6;
 controls.maxAzimuthAngle = [ -0.52, 0.52];
-controls.maxPolarAngle = 1.042
+//controls.maxPolarAngle = 1.042
 
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
