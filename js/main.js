@@ -71,8 +71,8 @@ controls.screenSpacePanning = false;
 controls.minDistance = 1;
 controls.maxDistance = 6;
 controls.enablePan = false;
-controls.target = new THREE.Vector3(0, 0.5, -4);
-controls.maxAzimuthAngle = [ -0.52, 0.52];
+controls.target = new THREE.Vector3(0, 0.5, -2);
+controls.maxAzimuthAngle = [ -0.2, 0.2];
 //controls.maxPolarAngle = 1.042
 
 
