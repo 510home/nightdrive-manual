@@ -115,10 +115,10 @@ meshLoader.load(
     wheelsFront.rotation.z = 0;
     wheelsFront.receiveShadow = true;
     wheelsFront.castShadow = true;
-    wheelsFront.traverse(o => {
-        if (o.isMesh) {
-          o.castShadow    = true;
-          o.receiveShadow = true;
+    wheelsFront.traverse(k => {
+        if (k.isMesh) {
+          k.castShadow    = true;
+          k.receiveShadow = true;
     scene.add(wheelsFront);
   }
 );
@@ -133,10 +133,10 @@ meshLoader.load(
     wheelsBack.receiveShadow = true;
     wheelsBack.castShadow = true;
     wheelsBack.rotation.z = 0;
-    wheelsBack.traverse(o => {
-        if (o.isMesh) {
-          o.castShadow    = true;
-          o.receiveShadow = true;
+    wheelsBack.traverse(h => {
+        if (h.isMesh) {
+          h.castShadow    = true;
+          h.receiveShadow = true;
     scene.add(wheelsBack);
   }
 );
