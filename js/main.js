@@ -29,6 +29,11 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   bloomPass.radius = 0;
    composer.addPass(bloomPass);
 
+// add renderer to the Document Object Model (DOM)
+//  renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('container3D').appendChild(renderer.domElement);
+
+
 //create a CAMERA
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
     camera.position.set(4.25, 0.5, 0);
@@ -146,10 +151,6 @@ meshLoader.load(
     scene.add(plane02tex);
     return plane02tex;
       }
-
-// add renderer to the Document Object Model (DOM)
- //   renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('container3D').appendChild(renderer.domElement);
 
   /* ── spotlights ── */
   function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
