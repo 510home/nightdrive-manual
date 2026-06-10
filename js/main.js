@@ -49,7 +49,7 @@ emissiveIntensity: 0.2,
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(-2, 2, -2);
+moon.position.set(-4, 2.5, -3);
 scene.add(moon);
 //camera.add(moon)
 
