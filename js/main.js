@@ -28,7 +28,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.shadowMap.enabled = true;
-//  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = THREE.PCFShadowMap;
     const renderScene = new RenderPass(scene, camera);
     const composer = new EffectComposer(renderer);
     composer.addPass(renderScene);
@@ -146,6 +146,7 @@ meshLoader.load(
     
     const plane02tex = new THREE.Mesh(texPLane, streetMat);
     plane02tex.rotation.x = -Math.PI / 2;
+    plane02tex.castShadow = false;
     plane02tex.receiveShadow = true;
     plane02tex.position.set(0, 0, 0.25);
     scene.add(plane02tex);
@@ -161,7 +162,7 @@ meshLoader.load(
     s.decay = 1.2;
     s.distance = 18;
     s.castShadow = true;
-    s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
+   // s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
     s.shadow.camera.near = 0.5;
     s.shadow.camera.far  = 12;
     s.target.position.set(tx, ty, tz);
