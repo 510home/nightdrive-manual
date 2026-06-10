@@ -119,6 +119,8 @@ meshLoader.load(
         if (k.isMesh) {
           k.castShadow    = true;
           k.receiveShadow = true;
+                    }
+      });
     scene.add(wheelsFront);
   }
 );
@@ -137,6 +139,8 @@ meshLoader.load(
         if (h.isMesh) {
           h.castShadow    = true;
           h.receiveShadow = true;
+                }
+      });
     scene.add(wheelsBack);
   }
 );
