@@ -14,7 +14,7 @@ scene.background = new THREE.Color(0x000022);
 
 //create a camera
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 200);
-    camera.position.set(6, .5, 1.5);
+    camera.position.set(6, .5, 1.75);
     camera.lookAt(0.5, 0.5, -1);
 
 // create a renderer
@@ -44,7 +44,7 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.3,
+emissiveIntensity: 0.1,
   alphaMap: moonalpha,
   transparent: true,
 });
