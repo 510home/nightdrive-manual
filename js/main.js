@@ -161,7 +161,7 @@ meshLoader.load(
     return s;
   }
 //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-  const spot1 = makeSpot(0x8ba9f3, 3, 1, 5, 3, -.5, .125, 0);
+  const spot1 = makeSpot(0x8ba9f3, 6, -1, .65, -3, -.5, 0.5, -0.25);
   spot1.castShadow = true;
     const spot2 = makeSpot(0x8ba9f3, 8, -1, 2.25, -3, -.5, .125, 0);
 spot2.castShadow = true;
