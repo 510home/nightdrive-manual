@@ -190,7 +190,7 @@ meshLoader.load(
     return s;
   }
   //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-    const spotleft = makeSpot(0xff00de, 9, -2, 1, 2, -.5, 1, 0.5);
+    const spotleft = makeSpot(0x8ba9f3, 9, -3, 1.5, 2, -.5, 1, 0.5);
 //  spot1.castShadow = true;
     const spotright = makeSpot(0x8ba9f3, 8, -1, 3, -3, 0, 1, -1);
 
