@@ -162,9 +162,9 @@ meshLoader.load(
     return s;
   }
 
-  const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
+//  const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
   spot1.castShadow = true;
-//  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
+  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
