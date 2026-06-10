@@ -15,11 +15,11 @@ scene.background = new THREE.Color(0x000022);
 //create a camera
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
     camera.position.set(5, 0.5, 0);
-    camera.rotation.set(
-        THREE.MathUtils.degToRad(0),
-        THREE.MathUtils.degToRad(60),
-        THREE.MathUtils.degToRad(30),
-        );
+ //   camera.rotation.set(
+ //       THREE.MathUtils.degToRad(0),
+ //       THREE.MathUtils.degToRad(60),
+ //       THREE.MathUtils.degToRad(30),
+ //       );
 //    camera.lookAt(0, 0.5, -4);
 
 // create a renderer
@@ -73,6 +73,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
+controls.enableXoom = false;
 controls.minDistance = 1;
 controls.maxDistance = 6;
 controls.enablePan = false;
