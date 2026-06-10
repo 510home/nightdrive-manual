@@ -66,7 +66,7 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.25,
+emissiveIntensity: 0.38,
   alphaMap: moonalpha,
   transparent: true,
 });
