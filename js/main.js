@@ -42,7 +42,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
 //  renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
-
+// ORBIT CONTROLS
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
@@ -52,7 +52,8 @@ controls.minDistance = 1;
 controls.maxDistance = 6;
 //controls.enablePan = false;
 controls.target = new THREE.Vector3(0, .75, -1);
-controls.maxAzimuthAngle = [ -0.2, 0.2];
+controls.maxAzimuthAngle = THREE.MathUtils.degToRad(60),
+controls.minAzimuthAngle = THREE.MathUtils.degToRad(10),
 //controls.maxPolarAngle = 1.042
 
 
