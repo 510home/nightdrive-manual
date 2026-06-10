@@ -29,17 +29,16 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   bloomPass.radius = 0;
    composer.addPass(bloomPass);
 
-//create a camera
+//create a CAMERA
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
-    camera.position.set(5, 0.5, 0);
+    camera.position.set(4.25, 0.5, 0);
  //   camera.rotation.set(
  //       THREE.MathUtils.degToRad(0),
  //       THREE.MathUtils.degToRad(60),
  //       THREE.MathUtils.degToRad(30),
  //       );
 
-
-// instantiate OrbitControls
+// instantiate ORBIT CONTROLS
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -49,7 +48,7 @@ controls.screenSpacePanning = false;
 controls.minDistance = 1;
 controls.maxDistance = 6;
 //controls.enablePan = false;
-controls.target = new THREE.Vector3(0, 2, -2);
+controls.target = new THREE.Vector3(0, 1, -2);
 controls.maxAzimuthAngle = [ -0.2, 0.2];
 //controls.maxPolarAngle = 1.042
 
@@ -194,8 +193,6 @@ wheelsBack.rotation.z -= 0.04 * deltaTime;
 wheelsFront.rotation.z -= 0.04 * deltaTime;
 chron++;
 mesh.material.map.offset.x = chron * -0.0075;
-// controls.update();
-//renderer.render(scene, camera);
 composer.render();
  }
 
