@@ -3,9 +3,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-//import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
-//import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
-//import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 // create a scene - Fog is set to temp colors for now
 const scene = new THREE.Scene();
@@ -75,10 +75,10 @@ controls.maxDistance = 20;
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
-  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_A.glb',
+  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_B.glb',
   (gltf) => {
     const lancer = gltf.scene;
-    lancer.scale.set(2, 2, 2);
+    lancer.scale.set(.99, .99, .99);
     lancer.position.set(-0.07, 0.06, -0.55);
     lancer.rotation.set(0, 0, 0);
     lancer.castShadow = true;
@@ -164,7 +164,7 @@ meshLoader.load(
 //const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
 const spot1 = makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
   spot1.castShadow = true;
-//  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
+  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
