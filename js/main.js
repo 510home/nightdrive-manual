@@ -162,9 +162,9 @@ meshLoader.load(
     s.decay = 1.2;
     s.distance = 18;
     s.castShadow = true;
-   // s.shadow.mapSize.width = s.shadow.mapSize.height = 1024;
-    s.shadow.camera.near = 0.5;
-    s.shadow.camera.far  = 12;
+    s.shadow.mapSize.width = s.shadow.mapSize.height = 2048;
+    s.shadow.camera.near = 0.2;
+    s.shadow.camera.far  = 20;
     s.target.position.set(tx, ty, tz);
     scene.add(s);
     scene.add(s.target);
