@@ -93,8 +93,8 @@ meshLoader.load(
     lancer.scale.set(.99, .99, .99);
     lancer.position.set(-0.07, 0.06, -0.55);
     lancer.rotation.set(0, 0, 0);
-    lancer.castShadow = true;
-    lancer.receiveShadow = true;
+   // lancer.castShadow = true;
+  //  lancer.receiveShadow = true;
 
     lancer.traverse(o => {
         if (o.isMesh) {
