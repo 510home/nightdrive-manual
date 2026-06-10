@@ -126,6 +126,15 @@ meshLoader.load(
   }
 );
 
+ model.traverse(lancer => {
+        if (lancer.isMesh) {
+          lancer.castShadow    = true;
+          lancer.receiveShadow = true;
+          // Ensure materials are double-sided in case normals are flipped
+     //     if (o.material) o.material.side = THREE.DoubleSide;
+        }
+      });
+
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
 // this long narrow plane holds the animated asphalt street texture
     function addRoad(scene) {
@@ -161,7 +170,7 @@ meshLoader.load(
     s.penumbra = 0.35;
     s.decay = 1.2;
     s.distance = 18;
- //   s.castShadow = true;
+    s.castShadow = true;
     s.shadow.mapSize.width = s.shadow.mapSize.height = 2048;
     s.shadow.camera.near = 0.2;
     s.shadow.camera.far  = 30;
@@ -174,7 +183,6 @@ meshLoader.load(
  //   const spotleft = makeSpot(0xff00de, 6, -2, 1, 2, -.5, 1, 0.5);
 //  spot1.castShadow = true;
     const spotright = makeSpot(0x8ba9f3, 8, -1, 3, -3, 0, 1, -1);
-    spotright.castShadow = true;
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
