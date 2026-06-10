@@ -78,7 +78,7 @@ meshLoader.load(
   'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_A.glb',
   (gltf) => {
     const lancer = gltf.scene;
-    lancer.scale.set(.99, .99, .99);
+    lancer.scale.set(2, 2, 2);
     lancer.position.set(-0.07, 0.06, -0.55);
     lancer.rotation.set(0, 0, 0);
     lancer.castShadow = true;
