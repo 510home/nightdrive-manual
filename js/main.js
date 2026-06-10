@@ -87,7 +87,7 @@ const meshLoader = new GLTFLoader();
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
-  'https://raw.githubusercontent.com/510home/nightdrive-manual/main/lancer_DG_body_C.glb',
+  'https://raw.githubusercontent.com/510home/nightdrive-manual/main/lancer_DG_body_D.glb',
   (gltf) => {
     const lancer = gltf.scene;
     lancer.scale.set(.99, .99, .99);
@@ -164,7 +164,7 @@ meshLoader.load(
     s.castShadow = true;
     s.shadow.mapSize.width = s.shadow.mapSize.height = 2048;
     s.shadow.camera.near = 0.2;
-    s.shadow.camera.far  = 20;
+    s.shadow.camera.far  = 30;
     s.target.position.set(tx, ty, tz);
     scene.add(s);
     scene.add(s.target);
@@ -172,8 +172,8 @@ meshLoader.load(
   }
   //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
     const spot1 = makeSpot(0x8ba9f3, 6, -2, 1, 2, -.5, 1, 0.5);
-//  spot1.castShadow = true;
-    const spot2 = makeSpot(0x8ba9f3, 8, -1, 3, -3, 0, 1, -1);
+    spot1.castShadow = true;
+    const spot2 = makeSpot(0xff00de, 8, -1, 3, -3, 0, 1, -1);
 //spot2.castShadow = true;
 
 // event listener watches for window changes in order to resize and rerender the window
