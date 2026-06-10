@@ -47,7 +47,6 @@ emissive: new THREE.Color(0xffffff),
 emissiveIntensity: 0.55,
   alphaMap: moonalpha,
   transparent: true,
-
 });
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(0, 2.25, -1.75);
