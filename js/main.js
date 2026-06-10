@@ -24,15 +24,15 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     const renderScene = new RenderPass(scene, camera);
- //   const composer = new EffectComposer(renderer);
+    const composer = new EffectComposer(renderer);
     composer.addPass(renderScene);
-// BLOOM PASS SETTINGS ------ Synthwave Glow
-   // const bloomPass = new UnrealBloomPass(
+ BLOOM PASS SETTINGS ------ Synthwave Glow
+ const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
-   //  bloomPass.threshold = 0;
-   //  bloomPass.strength = 1;
-   //  bloomPass.radius = 0;
-  //  composer.addPass(bloomPass);
+    bloomPass.threshold = 0;
+  bloomPass.strength = 1;
+  bloomPass.radius = 0;
+   composer.addPass(bloomPass);
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 3, 60);
