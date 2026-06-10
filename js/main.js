@@ -52,10 +52,10 @@ controls.minDistance = 1;
 controls.maxDistance = 6;
 //controls.enablePan = false;
 controls.target = new THREE.Vector3(0, .75, -1);
-controls.maxAzimuthAngle = THREE.MathUtils.degToRad(30);
+controls.maxAzimuthAngle = THREE.MathUtils.degToRad(20);
 controls.minAzimuthAngle = THREE.MathUtils.degToRad(-20);
 controls.maxPolarAngle = THREE.MathUtils.degToRad(120); 
-controls.minPolarAngle = THREE.MathUtils.degToRad(-20);
+controls.minPolarAngle = THREE.MathUtils.degToRad(-90);
 
 
 // MOON ────────────────────── 
