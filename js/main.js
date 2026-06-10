@@ -69,8 +69,8 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 controls.minDistance = 1;
-controls.maxDistance = 9;
-controls.maxAzimuthAngle = [ - 2 PI, 2 PI ];
+controls.maxDistance = 6;
+controls.maxAzimuthAngle = [ -0.52, 0.52];
 controls.maxPolarAngle = 0.52
 
 
