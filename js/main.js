@@ -49,7 +49,7 @@ emissiveIntensity: 0.2,
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(0, 2, -1.75);
+moon.position.set(-2, 2, -2);
 scene.add(moon);
 //camera.add(moon)
 
@@ -163,7 +163,7 @@ meshLoader.load(
   //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
     const spot1 = makeSpot(0x8ba9f3, 6, -2, 1, 2, -.5, 1, 0.5);
 //  spot1.castShadow = true;
-    const spot2 = makeSpot(0x8ba9f3, 8, -1, 2.25, -3, -.5, .125, 0);
+    const spot2 = makeSpot(0x8ba9f3, 8, -1, 3, -3, 0, 1, -1);
 //spot2.castShadow = true;
 
 // event listener watches for window changes in order to resize and rerender the window
