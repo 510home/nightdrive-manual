@@ -13,7 +13,7 @@ scene.background = new THREE.Color(0x000022);
 //scene.fog = new THREE.Fog(0x000000, 1, 12);
 
 //create a camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
+const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 200);
     camera.position.set(3, .5, .75);
     camera.lookAt(0.5, 0.5, -2);
 
