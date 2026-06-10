@@ -22,6 +22,20 @@ const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerH
  //       );
 //    camera.lookAt(0, 0.5, -4);
 
+// instantiate OrbitControls
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.enableZoom = false;
+controls.minDistance = 1;
+controls.maxDistance = 6;
+controls.enablePan = false;
+controls.target = new THREE.Vector3(0, 2, -2);
+controls.maxAzimuthAngle = [ -0.2, 0.2];
+//controls.maxPolarAngle = 1.042
+
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -66,21 +80,6 @@ let chron = 0;
 
 // instantiate GLTFLoader for models
 const meshLoader = new GLTFLoader();
-
-// instantiate OrbitControls
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.screenSpacePanning = false;
-controls.enableZoom = false;
-controls.minDistance = 1;
-controls.maxDistance = 6;
-controls.enablePan = false;
-controls.target = new THREE.Vector3(0, 0.5, -2);
-controls.maxAzimuthAngle = [ -0.2, 0.2];
-//controls.maxPolarAngle = 1.042
-
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
