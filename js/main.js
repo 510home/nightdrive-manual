@@ -15,7 +15,7 @@ scene.background = new THREE.Color(0x000022);
 //create a CAMERA
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
     camera.position.set(5, 0.5, 0);
- //   camera.rotation.set(
+    camera.rotation.set(0, 15, 0);
  //       THREE.MathUtils.degToRad(0),
  //       THREE.MathUtils.degToRad(60),
  //       THREE.MathUtils.degToRad(30),
@@ -37,7 +37,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
       new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
     bloomPass.threshold = 0.25;
   bloomPass.strength = 1;
-  bloomPass.radius = 1;
+  bloomPass.radius = .65;
    composer.addPass(bloomPass);
 
 // add renderer to the Document Object Model (DOM)
@@ -68,7 +68,7 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.2,
+emissiveIntensity: 0.5,
   alphaMap: moonalpha,
   transparent: true,
 });
