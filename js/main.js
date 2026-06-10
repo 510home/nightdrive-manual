@@ -44,7 +44,7 @@ map: mooncolor,
 emissiveMap: mooncolor,
 receiveShadow: false,
 emissive: new THREE.Color(0xffffff),
-emissiveIntensity: 0.55,
+emissiveIntensity: 0.3,
   alphaMap: moonalpha,
   transparent: true,
 });
@@ -147,7 +147,7 @@ meshLoader.load(
   function makeSpot(color, intensity, x, y, z, tx, ty, tz) {
     const s = new THREE.SpotLight(color, intensity);
     s.position.set(x, y, z);
-    s.angle = Math.PI / 7;
+    s.angle = Math.PI / 5;
     s.penumbra = 0.35;
     s.decay = 1.8;
     s.distance = 18;
@@ -161,7 +161,7 @@ meshLoader.load(
     return s;
   }
 //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-  const spot1 = makeSpot(0x8ba9f3, 2, 1, 5, 3, -.5, .125, 0);
+  const spot1 = makeSpot(0x8ba9f3, 3, 1, 5, 3, -.5, .125, 0);
   spot1.castShadow = true;
 //  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
