@@ -63,14 +63,14 @@ let chron = 0;
 const meshLoader = new GLTFLoader();
 
 // instantiate OrbitControls
-/*
+
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
-controls.minDistance = .35;
-controls.maxDistance = 20;
-*/
+controls.minDistance = 1;
+controls.maxDistance = 9;
+
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
@@ -161,10 +161,10 @@ meshLoader.load(
     return s;
   }
 //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-  const spot1 = makeSpot(0x8ba9f3, 6, 0, .65, -2, -.5, 0.125, 0);
-  spot1.castShadow = true;
+  const spot1 = makeSpot(0x8ba9f3, 6, -0.25, 1, 2, -.5, 0.125, 0);
+//  spot1.castShadow = true;
     const spot2 = makeSpot(0x8ba9f3, 8, -1, 2.25, -3, -.5, .125, 0);
-spot2.castShadow = true;
+//spot2.castShadow = true;
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
