@@ -51,6 +51,7 @@ emissiveIntensity: 0.65,
 });
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(0, 2.25, -1.75);
+moon.rotation.set(0,-Math.PI / 5, 0);
 scene.add(moon);
 //camera.add(moon)
 
@@ -134,7 +135,7 @@ meshLoader.load(
     
     const plane02tex = new THREE.Mesh(texPLane, streetMat);
     plane02tex.rotation.x = -Math.PI / 2;
-    plane02tex.receiveShadow = true;
+    plane02tex.receiveShadow = false;
     plane02tex.position.set(0, 0, 0.25);
     scene.add(plane02tex);
     return plane02tex;
@@ -163,7 +164,7 @@ meshLoader.load(
   }
 //const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
 const spot1 = makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
-  spot1.castShadow = true;
+  spot1.castShadow = false;
 //  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
 // event listener watches for window changes in order to resize and rerender the window
