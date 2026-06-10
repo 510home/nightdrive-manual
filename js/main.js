@@ -12,6 +12,17 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000022);
 //scene.fog = new THREE.Fog(0x000000, 1, 12);
 
+//create a CAMERA
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
+    camera.position.set(4.25, 0.5, 0);
+ //   camera.rotation.set(
+ //       THREE.MathUtils.degToRad(0),
+ //       THREE.MathUtils.degToRad(60),
+ //       THREE.MathUtils.degToRad(30),
+ //       );
+
+// instantiate ORBIT CONTROLS
+
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -33,17 +44,6 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
 //  renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('container3D').appendChild(renderer.domElement);
 
-
-//create a CAMERA
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
-    camera.position.set(4.25, 0.5, 0);
- //   camera.rotation.set(
- //       THREE.MathUtils.degToRad(0),
- //       THREE.MathUtils.degToRad(60),
- //       THREE.MathUtils.degToRad(30),
- //       );
-
-// instantiate ORBIT CONTROLS
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
