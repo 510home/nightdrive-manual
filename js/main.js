@@ -37,7 +37,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
       new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
     bloomPass.threshold = 0;
   bloomPass.strength = 1;
-  bloomPass.radius = 0;
+  bloomPass.radius = 2;
    composer.addPass(bloomPass);
 
 // add renderer to the Document Object Model (DOM)
@@ -190,7 +190,7 @@ meshLoader.load(
     return s;
   }
   //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
-    const spotleft = makeSpot(0x8ba9f3, 10, -3, 1, 2, -.5, 2, 0.5);
+    const spotleft = makeSpot(0x8ba9f3, 10, -3, .5, 2, -.5, 1.5, 0.5);
     
 //  spot1.castShadow = true;
     const spotright = makeSpot(0x8ba9f3, 8, -1, 3, -3, 0, 1, -1);
