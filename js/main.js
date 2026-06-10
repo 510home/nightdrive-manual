@@ -115,6 +115,10 @@ meshLoader.load(
     wheelsFront.rotation.z = 0;
     wheelsFront.receiveShadow = true;
     wheelsFront.castShadow = true;
+    wheelsFront.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow    = true;
+          o.receiveShadow = true;
     scene.add(wheelsFront);
   }
 );
@@ -129,10 +133,13 @@ meshLoader.load(
     wheelsBack.receiveShadow = true;
     wheelsBack.castShadow = true;
     wheelsBack.rotation.z = 0;
+    wheelsBack.traverse(o => {
+        if (o.isMesh) {
+          o.castShadow    = true;
+          o.receiveShadow = true;
     scene.add(wheelsBack);
   }
 );
-lancer.add(wheelsFront); 
 
 // ── Ground Plane 02 (16 m wide × 4 m long) ───────────────────────────────
 // this long narrow plane holds the animated asphalt street texture
