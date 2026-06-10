@@ -70,6 +70,8 @@ controls.dampingFactor = 0.05;
 controls.screenSpacePanning = false;
 controls.minDistance = 1;
 controls.maxDistance = 9;
+controls.maxAzimuthAngle = [ - 2 PI, 2 PI ];
+controls.maxPolarAngle = 0.52
 
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
