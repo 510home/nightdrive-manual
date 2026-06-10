@@ -74,7 +74,7 @@ controls.maxDistance = 20;
 
 // GLTF LOADER ------- the gltf model using the gltf loader library
 meshLoader.load(
-  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/lancer_DG_body_B.glb',
+  'https://raw.githubusercontent.com/510home/nightdrive-manual/main/lancer_DG_body_C.glb',
   (gltf) => {
     const lancer = gltf.scene;
     lancer.scale.set(.99, .99, .99);
