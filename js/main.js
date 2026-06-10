@@ -35,7 +35,7 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
    composer.addPass(bloomPass);
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
-const circle = new THREE.CircleGeometry( 3.5, 60);
+const circle = new THREE.CircleGeometry( 5, 48);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
