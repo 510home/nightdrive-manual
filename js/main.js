@@ -101,7 +101,7 @@ meshLoader.load(
 
 var wheelsBack;
 meshLoader.load(
-  'https://raw.githubusercontent.com/510home/iso-night-drive/main/models/wheels_1x_02.glb',
+  'https://raw.githubusercontent.com/510home/nightdrive-manual/main/lancer_wheels.glb',
   (gltf) => {
     wheelsBack = gltf.scene;
     wheelsBack.scale.set(.97, .97, .97);
@@ -163,7 +163,8 @@ meshLoader.load(
 //const spot1 = makeSpot(0xfff4d0, 2, 1, 5, 3, 0, 0, 0);
   const spot1 = makeSpot(0x8ba9f3, 3, 1, 5, 3, -.5, .125, 0);
   spot1.castShadow = true;
-  makeSpot(0x8ba9f3, 6, -1, 2.25, -3, -.5, .125, 0);
+    const spot2 = makeSpot(0x8ba9f3, 8, -1, 2.25, -3, -.5, .125, 0);
+spot2.castShadow = true;
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
