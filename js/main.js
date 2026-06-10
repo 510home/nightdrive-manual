@@ -27,12 +27,12 @@ const renderer = new THREE.WebGLRenderer( { alpha: true });
     const composer = new EffectComposer(renderer);
     composer.addPass(renderScene);
 // BLOOM PASS SETTINGS ------ Synthwave Glow
-    const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
+   // const bloomPass = new UnrealBloomPass(
+    //  new THREE.Vector2(window.innerWidth, window.innerHeight), 8, 4, 0.75);
    //  bloomPass.threshold = 0;
    //  bloomPass.strength = 1;
    //  bloomPass.radius = 0;
-    composer.addPass(bloomPass);
+  //  composer.addPass(bloomPass);
 
 //Synthwave Moon ────────────────────── a circle for the camera to look at
 const circle = new THREE.CircleGeometry( 3, 60);
@@ -52,7 +52,7 @@ emissiveIntensity: 0.65,
 const moon = new THREE.Mesh( circle, moonmat);
 moon.position.set(0, 2.25, -1.75);
 scene.add(moon);
-//camera.add(moon)
+camera.add(moon)
 
 // mesh variable for street
 let mesh = addRoad(scene);
@@ -94,6 +94,8 @@ meshLoader.load(
     wheelsFront.scale.set(1, 1, 1);
     wheelsFront.position.set(0.985, 0.2, -0.525);
     wheelsFront.rotation.z = 0;
+    wheelsFront.receiveShadow = true;
+    wheelsFront.castShadow = true;
     scene.add(wheelsFront);
   }
 );
@@ -105,6 +107,8 @@ meshLoader.load(
     wheelsBack = gltf.scene;
     wheelsBack.scale.set(.97, .97, .97);
     wheelsBack.position.set(-0.72, 0.2, -0.525);
+    wheelsBack.receiveShadow = true;
+    wheelsBack.castShadow = true;
     wheelsBack.rotation.z = 0;
     scene.add(wheelsBack);
   }
@@ -160,7 +164,7 @@ meshLoader.load(
 
   const spot1 = makeSpot(0xfff4d0, 2,  1, 5,  3, 0, 0, 0);
   spot1.castShadow = true;
-  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
+//  makeSpot(0x8ba9f3, 6, 5, 3, 0, -.5, .125, 0);
 
 // event listener watches for window changes in order to resize and rerender the window
 window.addEventListener('resize', function () {
