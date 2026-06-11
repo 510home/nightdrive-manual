@@ -52,8 +52,8 @@ controls.minDistance = 3;
 controls.maxDistance = 6;
 //controls.enablePan = false;
 controls.target = new THREE.Vector3(0, .75, -1);
-controls.maxAzimuthAngle = THREE.MathUtils.degToRad(63);
-controls.minAzimuthAngle = THREE.MathUtils.degToRad(35);
+controls.maxAzimuthAngle = THREE.MathUtils.degToRad(62);
+controls.minAzimuthAngle = THREE.MathUtils.degToRad(37);
 controls.maxPolarAngle = THREE.MathUtils.degToRad(70); 
 controls.minPolarAngle = THREE.MathUtils.degToRad(90);
 
