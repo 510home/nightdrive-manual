@@ -73,7 +73,7 @@ emissiveIntensity: 0.31,
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(-9, 5, -9);
+moon.position.set(-9, 8, -9);
 scene.add(moon);
 
 // mesh variable for street
