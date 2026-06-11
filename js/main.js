@@ -14,7 +14,7 @@ scene.background = new THREE.Color(0x000022);
 
 //create a CAMERA
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
-    camera.position.set(5, 0.5, 2);
+    camera.position.set(5, 0.75, 2);
     camera.rotation.set(
         THREE.MathUtils.degToRad(0),
         THREE.MathUtils.degToRad(60),
