@@ -45,11 +45,11 @@ document.getElementById('container3D').appendChild(renderer.domElement);
 // ORBIT CONTROLS
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.05;
+controls.dampingFactor = 0.25;
 controls.screenSpacePanning = false;
 //controls.enableZoom = false;
-controls.minDistance = 1;
-controls.maxDistance = 3;
+controls.minDistance = 4;
+controls.maxDistance = 5;
 //controls.enablePan = false;
 controls.target = new THREE.Vector3(0, .75, -1);
 controls.maxAzimuthAngle = THREE.MathUtils.degToRad(70);
