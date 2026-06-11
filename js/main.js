@@ -59,7 +59,7 @@ controls.minPolarAngle = THREE.MathUtils.degToRad(90);
 
 
 // MOON ────────────────────── 
-const circle = new THREE.CircleGeometry( 6, 48);
+const circle = new THREE.CircleGeometry( 7, 48);
 const moonmaps = new THREE.TextureLoader();
 const moonalpha = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
 const mooncolor = moonmaps.load('https://raw.githubusercontent.com/510home/nightdrive-manual/main/tex/Moonsky_01_2400.jpg');
@@ -73,7 +73,7 @@ emissiveIntensity: 0.32,
   transparent: true,
 });
 const moon = new THREE.Mesh( circle, moonmat);
-moon.position.set(-4, 2.5, -3);
+moon.position.set(-5, 2.5, -5);
 scene.add(moon);
 
 // mesh variable for street
