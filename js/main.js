@@ -14,12 +14,9 @@ scene.background = new THREE.Color(0x000022);
 
 //create a CAMERA
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 50);
+    // INTRO POSE — where the camera sits on load, before the smooth transition
     camera.position.set(5, 1.5, 2);
-    camera.rotation.set(
-        THREE.MathUtils.degToRad(0),
-        THREE.MathUtils.degToRad(60),
-        THREE.MathUtils.degToRad(60),
-        );
+    camera.lookAt(0, 0, 0);   // (OrbitControls' constructor does the same lookAt; stated for clarity)
 
 // create a renderer
 const renderer = new THREE.WebGLRenderer( { alpha: true });
@@ -56,6 +53,30 @@ controls.maxAzimuthAngle = THREE.MathUtils.degToRad(62);
 controls.minAzimuthAngle = THREE.MathUtils.degToRad(37);
 controls.maxPolarAngle = THREE.MathUtils.degToRad(70); 
 controls.minPolarAngle = THREE.MathUtils.degToRad(90);
+
+// ── SMOOTH INTRO TWEEN ──────────────────────────────────────────────
+// On load the camera shows the INTRO pose above. The first drag into
+// OrbitControls used to snap the camera to the pose the controls impose
+// (target + constraints applied in one frame) — that was the abrupt jump.
+// Fix: capture both poses, then tween the camera from -> to over
+// INTRO_DURATION ms. The endpoint comes from controls.update() itself,
+// so it always matches exactly where OrbitControls will put the camera,
+// no matter how the constraints above change.
+const introFromPos  = camera.position.clone();
+const introFromQuat = camera.quaternion.clone();
+
+controls.update();   // let OrbitControls apply target + constraints -> the "to" pose
+const introToPos  = camera.position.clone();
+const introToQuat = camera.quaternion.clone();
+
+camera.position.copy(introFromPos);     // restore the intro pose for the tween
+camera.quaternion.copy(introFromQuat);
+controls.enabled = false;               // no dragging while the tween runs
+
+let introElapsed = 0;
+let introDone = false;
+const INTRO_DURATION = 1200;   // ms — tune this: 1000 = snappier, 2000 = dreamier
+const easeOutCubic  = (t) => 1 - Math.pow(1 - t, 3);   // fast start, gentle landing
 
 
 // MOON ────────────────────── 
@@ -210,10 +231,26 @@ const currentTime = Date.now()
 const deltaTime = currentTime - time
 moon.lookAt(camera.position);
 time = currentTime
-wheelsBack.rotation.z -= 0.04 * deltaTime;
-wheelsFront.rotation.z -= 0.04 * deltaTime;
+if (wheelsBack && wheelsFront) {   // models load async; don't throw (and drop frames) before they arrive
+  wheelsBack.rotation.z -= 0.04 * deltaTime;
+  wheelsFront.rotation.z -= 0.04 * deltaTime;
+}
 chron++;
 mesh.material.map.offset.x = chron * -0.0075;
+
+  // intro camera tween: eases from the INTRO pose to the OrbitControls pose
+  if (!introDone) {
+    introElapsed += deltaTime;
+    const t = Math.min(1, introElapsed / INTRO_DURATION);
+    const e = easeOutCubic(t);
+    camera.position.lerpVectors(introFromPos, introToPos, e);
+    camera.quaternion.slerpQuaternions(introFromQuat, introToQuat, e);
+    if (t >= 1) {
+      introDone = true;
+      controls.enabled = true;   // dragging resumes exactly where the tween landed
+    }
+  }
+
 composer.render();
  }
 
